@@ -1,5 +1,5 @@
 {
-  "name": "ana.js-atoms",
+  "name": "ana.js-ui",
   "version": "0.0.1",
   "description": "Ana.js extension that adds atomically designed components.",
   "author": "Oscar Alfonso Guerrero Nuñez",
@@ -28,12 +28,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CarcajadaArtificial/ana.js-check.git"
+    "url": "git+https://github.com/CarcajadaArtificial/ana.js-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/CarcajadaArtificial/ana.js-check/issues"
+    "url": "https://github.com/CarcajadaArtificial/ana.js-ui/issues"
   },
-  "homepage": "https://github.com/CarcajadaArtificial/ana.js-check#readme",
+  "homepage": "https://github.com/CarcajadaArtificial/ana.js-ui#readme",
   "dependencies": {
     "ana.js": "^0.6.19"
   }

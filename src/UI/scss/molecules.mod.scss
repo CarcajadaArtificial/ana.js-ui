@@ -1,0 +1,13 @@
+@import './utils/utils.aux';
+
+.a-Checkbox {
+  &_container {
+    @include no-select;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.a-Navbar {
+  display: flex;
+}

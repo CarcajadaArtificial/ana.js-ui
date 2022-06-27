@@ -1,0 +1,18 @@
+@import '../../scss/utils/utils.aux.scss';
+
+// -----------------------------------------------------------------------------------------------------
+// Padding
+.p {
+  &-non {
+    padding: unit-x(0)
+  }
+  &-sgl {
+    padding: unit-x($eighth)
+  }
+  &-dbl {
+    padding: unit-x($quarter)
+  }
+  &-tpl {
+    padding: unit-x($half)
+  }
+}

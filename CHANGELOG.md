@@ -1,8 +1,33 @@
 # CHANGELOG.md
 
+## **0.1.0** Goals
+
+- [ ] Atoms
+- [ ] Molecules
+- [ ] Organisms
+- [ ] Particles
+
 ## Unreleased
 
-### **0.0.3** (Latest)
+### **0.0.4** (Latest)
+
+- `Added` a rendered accessable to components.
+  - `~/src/UI/ana.ts`
+
+- `Added` main application rendering, updated to `ana.js@0.9.1`
+  - `~/src/main.ts`
+
+- `Added` the Box atom
+  - `~/src/UI/Components.ts`
+  - `~/src/UI/Atoms/Box/Box.interface.ts`
+  - `~/src/UI/Atoms/Box/Box.scss`
+  - `~/src/UI/Atoms/Box/Box.ts`
+
+- `Added` the sass dev dependency
+
+- `Added` Contributing documentation from previous Ana.js repository.
+
+### **0.0.3**
 
 - `Added` styles transfered from the ana.js repository.
   - `~/src/UI/scss/*`

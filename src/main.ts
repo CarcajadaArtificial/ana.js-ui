@@ -1,14 +1,10 @@
-import { Ana, byId } from 'ana.js'
+import { GenericData} from 'ana.js'
+import { app } from "./UI/ana";
+import { components, Components } from './UI/Components';
 
-const A = new Ana()
-const a = A.render
+app.components = { ...components }
+const a = app.render<Components>();
 
-A.app({
-  title: 'Example title'
-}, (state: any) => byId('app').replaceChildren(
-  a.h1()(state.title)
-))
-
-setTimeout(() => {
-  A.up({ title: 'Title changed after 5 seconds' })
-}, 5000);
+app.init({},
+  (d: GenericData) => a.Box(a.span()('Test'))()
+);

@@ -9,7 +9,13 @@
 
 ## Unreleased
 
-### **0.0.7** (Latest)
+### **0.0.8** (Latest)
+
+- `Added` A new way to render components, with properties as first priority and children as second. `a-Component(prop)(children)`.
+
+- `Added` Display, Heading, Label, Paragraph, Small, Subheading, and Title modules.
+
+### **0.0.7**
 
 - `Added` Example module to CONTRIBUTING.md.
 

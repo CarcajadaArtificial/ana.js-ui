@@ -1,48 +1,25 @@
 /**
- * @module Components/Atoms/Heading
+ * @module Atoms/Heading
  */
-import { iAnaConfiguration } from '../../../Ana/Ana.interface'
-import { RenderDictionary, ContrastValues, ColorValues } from '../../../types'
-import classNames from 'classnames'
-import { ColorContrastClass } from '../../Particles/Particles'
+import { applyDefaultParameters, StaticChild } from 'ana.js';
+import { Heading, cHeading, dHeading, iHeading } from './Heading.interface';
+import { a } from '../../ana';
+import './Heading.scss';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-//   _____ _ _   _
-//  |_   _(_) |_| | ___
-//    | | | | __| |/ _ \
-//    | | | | |_| |  __/
-//    |_| |_|\__|_|\___|
-//
+//   _   _                _ _
+//  | | | | ___  __ _  __| (_)_ __   __ _
+//  | |_| |/ _ \/ _` |/ _` | | '_ \ / _` |
+//  |  _  |  __/ (_| | (_| | | | | | (_| |
+//  |_| |_|\___|\__,_|\__,_|_|_| |_|\__, |
+//                                  |___/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- * A Heading is the medium-sized heading of the three heading types, the other two being the Subheading and the Title. It is conventionally used for titles of page sections, multiple of these can be found inside a single page.
- */
-export function rHeading(
-  a: RenderDictionary,
-  config: iAnaConfiguration
-): Function {
-  config
-  return (...children: [Node | string | Function]): Function => {
-    return (param: iHeading = {}): HTMLElement => {
-      // Default values
-      param = {
-        ...{ contrast: 'highest', color: 'grey' },
-        ...param,
-      }
-      let classes = {
-        Heading: classNames(
-          'a-Heading',
-          ColorContrastClass(param.color, param.contrast, 'txt')
-        ).split(' '),
-      }
 
-      return a.div(...classes.Heading)(...children)
-    }
-  }
-}
+export const rHeading =
+  (param: iHeading = {}): Function =>
+  (...children: StaticChild[]): HTMLElement => {
+    let p: Heading = applyDefaultParameters<Heading, iHeading>(dHeading, param);
+    let c = cHeading(p);
 
-//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-export interface iHeading {
-  contrast?: ContrastValues
-  color?: ColorValues
-}
+    return a[p.tag](c.heading)(...children);
+  };

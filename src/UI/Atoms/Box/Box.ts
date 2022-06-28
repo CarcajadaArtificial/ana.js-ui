@@ -16,8 +16,8 @@ import './Box.scss';
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const rBox =
-  (...children: StaticChild[]) =>
-  (param: iBox = {}): HTMLElement => {
+  (param: iBox = {}): Function =>
+  (...children: StaticChild[]): HTMLElement => {
     let p: Box = applyDefaultParameters<Box, iBox>(dBox, param);
     let c = cBox(p);
 

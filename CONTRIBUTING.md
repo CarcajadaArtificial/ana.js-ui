@@ -6,7 +6,7 @@
 /**
  * @module Example
  */
-import { applyDefaultParameters } from 'ana.js';
+import { applyDefaultParameters, StaticChild } from 'ana.js';
 import { Example, cExample, dExample, iExample } from './Example.interface';
 import { a } from '../../ana';
 import './Example.scss';
@@ -16,8 +16,8 @@ import './Example.scss';
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const rExample =
-  (...children: [Node | string | Function]): Function =>
-  (param: iExample = {}): HTMLElement => {
+  (param: iExample = {}): Function =>
+  (...children: StaticChild[]): HTMLElement => {
     let p: Example = applyDefaultParameters<Example, iExample>(dExample, param);
     let c = cExample(p);
 

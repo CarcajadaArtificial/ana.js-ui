@@ -1,7 +1,7 @@
 /**
- * @module Display
+ * @module Atoms/Display
  */
-import { applyDefaultParameters } from 'ana.js';
+import { applyDefaultParameters, StaticChild } from 'ana.js';
 import { Display, cDisplay, dDisplay, iDisplay } from './Display.interface';
 import { a } from '../../ana';
 import './Display.scss';
@@ -16,10 +16,10 @@ import './Display.scss';
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const rDisplay =
-  (...children: [Node | string | Function]): Function =>
-  (param: iDisplay = {}): HTMLElement => {
+  (param: iDisplay = {}): Function =>
+  (...children: StaticChild[]): HTMLElement => {
     let p: Display = applyDefaultParameters<Display, iDisplay>(dDisplay, param);
     let c = cDisplay(p);
 
-    return a.div(c.display)(...children);
+    return a[p.tag](c.display)(...children);
   };

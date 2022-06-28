@@ -1,40 +1,25 @@
 /**
- * @module Components/Atom/Small
+ * @module Atoms/Small
  */
-import { iAnaConfiguration } from '../../../Ana/Ana.interface'
-import { RenderDictionary } from '../../../types'
-import classNames from 'classnames'
+import { applyDefaultParameters, StaticChild } from 'ana.js';
+import { Small, cSmall, dSmall, iSmall } from './Small.interface';
+import { a } from '../../ana';
+import './Small.scss';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-//   ____                  _ _
-//  / ___| _ __ ___   __ _| | |
-//  \___ \| '_ ` _ \ / _` | | |
-//   ___) | | | | | | (_| | | |
-//  |____/|_| |_| |_|\__,_|_|_|
-//
+//   ____                                       _
+//  |  _ \ __ _ _ __ __ _  __ _ _ __ __ _ _ __ | |__
+//  | |_) / _` | '__/ _` |/ _` | '__/ _` | '_ \| '_ \
+//  |  __/ (_| | | | (_| | (_| | | | (_| | |_) | | | |
+//  |_|   \__,_|_|  \__,_|\__, |_|  \__,_| .__/|_| |_|
+//                        |___/          |_|
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- *
- */
-export function rSmall(
-  a: RenderDictionary,
-  config: iAnaConfiguration
-): Function {
-  config
-  return (...children: [Node | string | Function]): Function => {
-    return (param: iSmall = {}): HTMLElement => {
-      param = {
-        ...{},
-        ...param,
-      }
-      let classes = {
-        Small: classNames().split(' '),
-      }
 
-      return a.div(...classes.Small)(...children)
-    }
-  }
-}
+export const rSmall =
+  (param: iSmall = {}): Function =>
+  (...children: StaticChild[]): HTMLElement => {
+    let p: Small = applyDefaultParameters<Small, iSmall>(dSmall, param);
+    let c = cSmall(p);
 
-//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-export interface iSmall {}
+    return a[p.tag](c.small)(...children);
+  };

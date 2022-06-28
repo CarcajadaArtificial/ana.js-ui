@@ -1,48 +1,33 @@
 /**
- * @module Components/Atoms/Paragraph
+ * @module Atoms/Paragraph
  */
-import { iAnaConfiguration } from '../../../Ana/Ana.interface'
-import { RenderDictionary, ContrastValues, ColorValues } from '../../../types'
-import classNames from 'classnames'
-import { ColorContrastClass } from '../../Particles/Particles'
+import { applyDefaultParameters, StaticChild } from 'ana.js';
+import {
+  Paragraph,
+  cParagraph,
+  dParagraph,
+  iParagraph,
+} from './Paragraph.interface';
+import { a } from '../../ana';
+import './Paragraph.scss';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-//  ____                                       _
-// |  _ \ __ _ _ __ __ _  __ _ _ __ __ _ _ __ | |__
-// | |_) / _` | '__/ _` |/ _` | '__/ _` | '_ \| '_ \
-// |  __/ (_| | | | (_| | (_| | | | (_| | |_) | | | |
-// |_|   \__,_|_|  \__,_|\__, |_|  \__,_| .__/|_| |_|
-//                       |___/          |_|
+//   ____                                       _
+//  |  _ \ __ _ _ __ __ _  __ _ _ __ __ _ _ __ | |__
+//  | |_) / _` | '__/ _` |/ _` | '__/ _` | '_ \| '_ \
+//  |  __/ (_| | | | (_| | (_| | | | (_| | |_) | | | |
+//  |_|   \__,_|_|  \__,_|\__, |_|  \__,_| .__/|_| |_|
+//                        |___/          |_|
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- * A Paragraph is one of two base typographical elements, slightly larger than a Label. This element is used for text that has multiple lines and more text after it, maybe a heading or another paragraph. If the content inside the element is a few words long, use a Label instead.
- */
-export function rParagraph(
-  a: RenderDictionary,
-  config: iAnaConfiguration
-): Function {
-  config
-  return (...children: [Node | string | Function]): Function => {
-    return (param: iParagraph = {}): HTMLElement => {
-      // Default values
-      param = {
-        ...{ contrast: 'highest', color: 'grey' },
-        ...param,
-      }
-      let classes = {
-        Paragraph: classNames(
-          'a-Paragraph',
-          ColorContrastClass(param.color, param.contrast, 'txt')
-        ).split(' '),
-      }
 
-      return a.div(...classes.Paragraph)(...children)
-    }
-  }
-}
+export const rParagraph =
+  (param: iParagraph = {}): Function =>
+  (...children: StaticChild[]): HTMLElement => {
+    let p: Paragraph = applyDefaultParameters<Paragraph, iParagraph>(
+      dParagraph,
+      param
+    );
+    let c = cParagraph(p);
 
-//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-export interface iParagraph {
-  contrast?: ContrastValues
-  color?: ColorValues
-}
+    return a[p.tag](c.paragraph)(...children);
+  };

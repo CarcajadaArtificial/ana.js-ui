@@ -1,16 +1,10 @@
 /**
- * @module Components/Atoms/Label
+ * @module Atoms/Label
  */
-import { iAnaConfiguration } from '../../../Ana/Ana.interface'
-import {
-  RenderDictionary,
-  ContrastValues,
-  ColorValues,
-  TextElements,
-  AddClassDictionary,
-} from '../../../types'
-import classNames from 'classnames'
-import { ColorContrastClass } from '../../Particles/Particles'
+import { applyDefaultParameters, StaticChild } from 'ana.js';
+import { Label, cLabel, dLabel, iLabel } from './Label.interface';
+import { a } from '../../ana';
+import './Label.scss';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 //   _          _          _
@@ -20,40 +14,12 @@ import { ColorContrastClass } from '../../Particles/Particles'
 //  |_____\__,_|_.__/ \___|_|
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- * A Label is one of two base typographical elements, slightly smaller than a Paragraph. This element is used for short text, a few words at most. For multilinear text, use a Paragraph instead
- */
-export function rLabel(
-  a: RenderDictionary,
-  config: iAnaConfiguration
-): Function {
-  config
-  return (...children: [Node | string | Function]): Function => {
-    return (param: iLabel = {}): HTMLElement => {
-      // Default values
-      param = {
-        ...{ contrast: 'highest', color: 'grey', tag: 'span', addClass: {} },
-        ...param,
-      }
-      let classes = {
-        Label: classNames(
-          'a-Label',
-          ColorContrastClass(param.color, param.contrast, 'txt'),
-          param.addClass ? param.addClass.Label : ''
-        ).split(' '),
-      }
 
-      return param.tag
-        ? a[param.tag](...classes.Label)(...children)
-        : a.span(...classes.Label)(...children)
-    }
-  }
-}
+export const rLabel =
+  (param: iLabel = {}): Function =>
+  (...children: StaticChild[]): HTMLElement => {
+    let p: Label = applyDefaultParameters<Label, iLabel>(dLabel, param);
+    let c = cLabel(p);
 
-//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-export interface iLabel {
-  contrast?: ContrastValues
-  color?: ColorValues
-  tag?: TextElements
-  addClass?: AddClassDictionary
-}
+    return a[p.tag](c.label)(...children);
+  };

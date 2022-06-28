@@ -5,16 +5,16 @@ import './scss/style.scss'
 import { Render } from 'ana.js'
 import { rBox } from './Atoms/Box/Box'
 import { rDisplay } from './Atoms/Display/display'
-// import { rHeading } from './Atoms/Heading/Heading'
-// import { rLabel } from './Atoms/Label/Label'
+import { rHeading } from './Atoms/Heading/Heading'
+import { rLabel } from './Atoms/Label/Label'
+import { rParagraph } from './Atoms/Paragraph/Paragraph'
+import { rSmall } from './Atoms/Small/Small'
+import { rSubheading } from './Atoms/Subheading/Subheading'
+import { rTitle } from './Atoms/Title/Title'
 // import { rLayout } from './Atoms/Layout/Layout'
 // import { rLink } from './Atoms/Link/Link'
 // import { rList } from './Atoms/List/List'
-// import { rParagraph } from './Atoms/Paragraph/Paragraph'
-// import { rSmall } from './Atoms/Small/Small'
-// import { rSubheading } from './Atoms/Subheading/Subheading'
 // import { rSurface } from './Atoms/Surface/Surface'
-// import { rTitle } from './Atoms/Title/Title'
 // import { rCheckbox } from './Molecules/Checkbox/Checkbox'
 // import { rNavbar } from './Molecules/Navbar/Navbar'
 // import { rApp } from './Organisms/App/App'
@@ -32,9 +32,21 @@ import { rDisplay } from './Atoms/Display/display'
 export interface Components extends Render {
   Box: Function
   Display: Function
+  Heading: Function
+  Label: Function
+  Paragraph: Function
+  Small: Function
+  Subheading: Function
+  Title: Function
 }
 
 export const components = {
   Box: rBox,
-  Display: rDisplay
+  Display: rDisplay,
+  Heading: rHeading,
+  Label: rLabel,
+  Paragraph: rParagraph,
+  Small: rSmall,
+  Subheading: rSubheading,
+  Title: rTitle,
 }

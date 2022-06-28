@@ -9,7 +9,11 @@
 
 ## Unreleased
 
-### **0.0.6** (Latest)
+### **0.0.7** (Latest)
+
+- `Added` Example module to CONTRIBUTING.md.
+
+### **0.0.6**
 
 - `Added` Scss modules localized to a component.
 

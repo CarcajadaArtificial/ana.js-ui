@@ -1,9 +1,10 @@
 /**
- * @module Components/Atom/Display
+ * @module Display
  */
-import { iAnaConfiguration } from '../../../Ana/Ana.interface'
-import { RenderDictionary } from '../../../types'
-import classNames from 'classnames'
+import { applyDefaultParameters } from 'ana.js';
+import { Display, cDisplay, dDisplay, iDisplay } from './Display.interface';
+import { a } from '../../ana';
+import './Display.scss';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 //   ____  _           _
@@ -13,28 +14,12 @@ import classNames from 'classnames'
 //  |____/|_|___/ .__/|_|\__,_|\__, |
 //              |_|            |___/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- *
- */
-export function rDisplay(
-  a: RenderDictionary,
-  config: iAnaConfiguration
-): Function {
-  config
-  return (...children: [Node | string | Function]): Function => {
-    return (param: iDisplay = {}): HTMLElement => {
-      param = {
-        ...{},
-        ...param,
-      }
-      let classes = {
-        Display: classNames().split(' '),
-      }
 
-      return a.div(...classes.Display)(...children)
-    }
-  }
-}
+export const rDisplay =
+  (...children: [Node | string | Function]): Function =>
+  (param: iDisplay = {}): HTMLElement => {
+    let p: Display = applyDefaultParameters<Display, iDisplay>(dDisplay, param);
+    let c = cDisplay(p);
 
-//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-export interface iDisplay {}
+    return a.div(c.display)(...children);
+  };

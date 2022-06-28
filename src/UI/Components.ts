@@ -3,6 +3,7 @@
  */
 import { Render } from 'ana.js'
 import { rBox } from './Atoms/Box/Box'
+import { rDisplay } from './Atoms/Display/display'
 // import { rHeading } from './Atoms/Heading/Heading'
 // import { rLabel } from './Atoms/Label/Label'
 // import { rLayout } from './Atoms/Layout/Layout'
@@ -29,8 +30,10 @@ import { rBox } from './Atoms/Box/Box'
 
 export interface Components extends Render {
   Box: Function
+  Display: Function
 }
 
 export const components = {
-  Box: rBox
+  Box: rBox,
+  Display: rDisplay
 }

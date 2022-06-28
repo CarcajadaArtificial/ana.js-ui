@@ -21,7 +21,5 @@ export const rBox =
     let p: Box = applyDefaultParameters<Box, iBox>(dBox, param);
     let c = cBox(p);
 
-    console.log(c)
-
-    return a.div(...c.box.split(' '))(...children);
+    return a.div(c.box)(...children);
   };

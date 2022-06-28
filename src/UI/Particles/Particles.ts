@@ -1,5 +1,5 @@
 /**
- * @module Components/Particles
+ * @module Particles
  */
 
 import {
@@ -9,7 +9,7 @@ import {
   LayoutType,
   Spacing,
   SpacingPrefix,
-} from '../../types'
+} from '../types'
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 //   ____            _   _      _           

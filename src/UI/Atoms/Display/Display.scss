@@ -1,0 +1,8 @@
+@import '../../scss/utils/utils.aux.scss';
+
+.a-Display {
+  font-size: font-size('display');
+  line-height: line-height('display');
+  font-weight: font-weight('bold');
+  text-align: center;
+}

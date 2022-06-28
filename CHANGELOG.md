@@ -9,7 +9,15 @@
 
 ## Unreleased
 
-### **0.0.4** (Latest)
+### **0.0.5** (Latest)
+
+- `Added` the display interface.
+  - `~/src/UI/Components.ts`
+  - `~/src/UI/Atoms/Display/Display.interface.ts`
+  - `~/src/UI/Atoms/Display/Display.scss`
+  - `~/src/UI/Atoms/Display/Display.ts`
+
+### **0.0.4**
 
 - `Added` a rendered accessable to components.
   - `~/src/UI/ana.ts`

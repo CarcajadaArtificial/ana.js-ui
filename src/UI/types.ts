@@ -83,3 +83,27 @@ export type LayoutType =
  * - `tpl` Triple
  */
 export type Spacing = 'tpl' | 'dbl' | 'sgl' | 'non';
+
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+/**
+ * 
+ */
+export type flexDirection = 'row' | 'row-reverse' | 'col' | 'col-reverse'
+
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+/**
+ * 
+ */
+export type flexWrap = 'wrap' | 'wrap-reverse' | 'nowrap'
+
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+/**
+ * 
+ */
+export type flexItems = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
+
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+/**
+ * 
+ */
+export type flexContent = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'

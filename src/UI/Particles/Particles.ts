@@ -2,7 +2,7 @@
  * @module Particles
  */
 // prettier-ignore
-import { ColorValues, ContrastValues, LayoutMargin, LayoutType, Spacing, SpacingPrefix } from '../types'
+import { ColorValues, ContrastValues, flexContent, flexDirection, flexItems, flexWrap, LayoutMargin, LayoutType, Spacing, SpacingPrefix } from '../types'
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 //   ____            _   _      _
@@ -78,4 +78,26 @@ export function LayoutClass(type?: LayoutType, margin?: LayoutMargin) {
  */
 export function SpacingClass(prefix: SpacingPrefix, spacing?: Spacing) {
   return `${prefix}-${spacing}`;
+}
+
+
+/**
+ * 
+ * @param direction 
+ * @param wrap 
+ * @param justify 
+ * @param items 
+ * @param content 
+ * @param gap 
+ * @returns 
+ */
+export function FlexClass(
+  direction: flexDirection,
+  wrap: flexWrap,
+  justify: flexContent,
+  items: flexItems,
+  content: flexContent,
+  gap: Spacing,
+) {
+  return `${direction} ${wrap} justify-${justify} items-${items} content-${content} g-${gap}`
 }

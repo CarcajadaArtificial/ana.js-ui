@@ -9,7 +9,11 @@
 
 ## Unreleased
 
-### **0.0.9** (Latest)
+### **0.0.10** (Latest)
+
+- `Added` the Flex atom
+
+### **0.0.9**
 
 - `Added` the Surface, Layout, and Link atoms.
 

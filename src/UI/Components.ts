@@ -14,7 +14,7 @@ import { rTitle } from './Atoms/Title/Title'
 import { rLayout } from './Atoms/Layout/Layout'
 import { rLink } from './Atoms/Link/Link'
 import { rSurface } from './Atoms/Surface/Surface'
-// import { rList } from './Atoms/List/List'
+import { rFlex } from './Atoms/Flex/Flex'
 // import { rCheckbox } from './Molecules/Checkbox/Checkbox'
 // import { rNavbar } from './Molecules/Navbar/Navbar'
 // import { rApp } from './Organisms/App/App'
@@ -41,6 +41,7 @@ export interface Components extends Render {
   Layout: Function
   Link: Function
   Surface: Function
+  Flex: Function
 }
 
 export const components = {
@@ -55,4 +56,5 @@ export const components = {
   Layout: rLayout,
   Link: rLink,
   Surface: rSurface,
+  Flex: rFlex,
 }

@@ -8,14 +8,16 @@ const a = app.render<Components>();
 app.init({}, (d: GenericData) =>
   a.Layout()(
     a.Surface()(
-      a.Display()('Display'),
-      a.Title()('Title'),
-      a.Heading()('Heading'),
-      a.Subheading()('Subheading'),
-      a.Paragraph()('Paragraph'),
-      a.Label()('Label'),
-      a.Small()('Small'),
-      a.Link()('Link')
+      a.Flex()(
+        a.Display()('Display'),
+        a.Title()('Title'),
+        a.Heading()('Heading'),
+        a.Subheading()('Subheading'),
+        a.Paragraph()('Paragraph'),
+        a.Label()('Label'),
+        a.Small()('Small'),
+        a.Link()('Link')
+      )
     )
   )
 );

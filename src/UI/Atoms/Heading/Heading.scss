@@ -1,0 +1,10 @@
+@import '../../scss/utils';
+
+/// A Heading is the medium-sized heading of the three heading types, the other two being the Subheading and the Title. It is conventionally used for titles of page sections, multiple of these can be found inside a single page.
+
+.a-Heading {
+  font-size: font-size('heading');
+  line-height: line-height('heading');
+  font-weight: font-weight('bold');
+  margin-bottom: 0;
+}

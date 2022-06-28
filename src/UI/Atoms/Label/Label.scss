@@ -1,0 +1,10 @@
+@import '../../scss/utils';
+
+/// A Label is one of two base typographical elements, along with a Paragraph. This element is used for short text, a few words at most. For multilinear text, use a Paragraph instead.
+
+.a-Label {
+  font-size: font-size('label');
+  line-height: line-height('label');
+  font-weight: font-weight('regular');
+  margin-bottom: 0;
+}

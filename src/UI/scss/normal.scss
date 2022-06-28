@@ -12,7 +12,7 @@
 /// This file contains styles that override defualt browser behavior.
 /// * Allowed: Universal (`*`), elements (`<body>`), pseudo-elements (`li:before`), pseudo-classes (`a:hover`)
 /// * Not allowed: Class (`.class`), id (`#id`), attribute (`input[type="text"]`)
-@import './utils/utils.aux';
+@import './utils';
 
 * {
   box-sizing: border-box;

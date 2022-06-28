@@ -1,0 +1,10 @@
+@import '../../scss/utils';
+
+/// A Paragraph is one of two base typographical element, along with a Label. This element's use is for text that has multiple lines and more text after it, maybe a heading or another paragraph. If the content inside the element is a few words long, use a Label instead.
+
+.a-Paragraph {
+  font-size: font-size('paragraph');
+  line-height: line-height('paragraph');
+  font-weight: font-weight('regular');
+  margin-bottom: 0;
+}

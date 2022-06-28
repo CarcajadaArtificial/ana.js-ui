@@ -6,8 +6,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@import 'error.mod';
-@import 'helper.mod';
-@import 'layouts.mod';
-@import 'type.mod';
-@import 'colors.mod';
+@import './utils/error.mod';
+@import './utils/helper.mod';
+@import './utils/layouts.mod';
+@import './utils/type.mod';
+@import './utils/colors.mod';

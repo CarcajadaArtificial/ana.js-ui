@@ -1,0 +1,10 @@
+@import '../../scss/utils';
+
+/// The Small is the shortest typographical element, it is used inside small elements that require text, like Chips or small Buttons.
+
+.a-small {
+  font-size: font-size('small');
+  line-height: line-height('small');
+  font-weight: font-weight('regular');
+  margin-bottom: 0;
+}

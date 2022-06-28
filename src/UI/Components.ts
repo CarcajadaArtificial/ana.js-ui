@@ -1,6 +1,7 @@
 /**
  * @module Components
  */
+import './scss/style.scss'
 import { Render } from 'ana.js'
 import { rBox } from './Atoms/Box/Box'
 import { rDisplay } from './Atoms/Display/display'

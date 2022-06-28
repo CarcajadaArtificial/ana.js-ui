@@ -1,0 +1,10 @@
+@import '../../scss/utils';
+
+/// A Subheading is the smallest of the three heading types, along with a Heading and Title. It is conventionally used for titles of subsections, multiple of these can be found inside a section.
+
+.a-Subheading {
+  font-size: font-size('subheading');
+  line-height: line-height('subheading');
+  font-weight: font-weight('regular');
+  margin-bottom: 0;
+}

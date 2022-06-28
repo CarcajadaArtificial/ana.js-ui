@@ -1,0 +1,10 @@
+@import '../../scss/utils';
+
+/// A Title is the largest heading of the three heading types, the other two being the Heading and Subheading. It is conventionally used for page title and only one can be found, usually at the top of the page.
+
+.a-Title {
+  font-size: font-size('title');
+  line-height: line-height('title');
+  font-weight: font-weight('bold');
+  margin-bottom: 0;
+}

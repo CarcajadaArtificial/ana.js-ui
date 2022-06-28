@@ -1,0 +1,126 @@
+@import './utils';
+
+// -----------------------------------------------------------------------------------------------------
+// Color Contrast
+@each $color, $shade in $colors {
+  .#{$color} {
+    &-txt {
+      &.cont-hst {
+        color: clr($color, 'black')
+      }
+      &.cont-h {
+        color: clr($color, 'shade')
+      }
+      &.cont-m {
+        color: clr($color, 'darkest')
+      }
+      &.cont-l {
+        color: clr($color, 'darker')
+      }
+      &.cont-lst {
+        color: clr($color, 'dark')
+      }
+    }
+
+    &-bg {
+      &.cont-hst {
+        background-color: clr($color, 'white')
+      }
+      &.cont-h {
+        background-color: clr($color, 'tint-lightest')
+      }
+      &.cont-m {
+        background-color: clr($color, 'tint-lighter')
+      }
+      &.cont-l {
+        background-color: clr($color, 'tint-light')
+      }
+      &.cont-lst {
+        background-color: clr($color, 'lightest')
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// Roundness
+.r {
+  &-non {
+    border-radius: 0;
+  }
+  &-sgl {
+    border-radius: unit-x($twelfth);
+  }
+  &-dbl {
+    border-radius: unit-x($sixth);
+  }
+  &-tpl {
+    border-radius: unit-x($third);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+.m {
+  &-non {
+    margin: unit-x(0)
+  }
+  &-sgl {
+    margin: unit-x($eighth)
+  }
+  &-dbl {
+    margin: unit-x($quarter)
+  }
+  &-tpl {
+    margin: unit-x($half)
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// Padding
+.p {
+  &-non {
+    padding: unit-x(0)
+  }
+  &-sgl {
+    padding: unit-x($eighth)
+  }
+  &-dbl {
+    padding: unit-x($quarter)
+  }
+  &-tpl {
+    padding: unit-x($half)
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// Elevation
+.l {
+  &-non {
+    box-shadow: none;
+  }
+  &-sgl {
+    box-shadow: 0px 1px 4px -2px clr('grey', 'black');
+  }
+  &-dbl {
+    box-shadow: 0px 2px 8px -4px clr('grey', 'black');
+  }
+  &-tpl {
+    box-shadow: 0px 4px 16px -8px clr('grey', 'black');
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+.g { 
+  &-non {
+    gap: unit-x(0)
+  }
+  &-sgl {
+    gap: unit-x($eighth)
+  }
+  &-dbl {
+    gap: unit-x($quarter)
+  }
+  &-tpl {
+    gap: unit-x($half)
+  }
+}

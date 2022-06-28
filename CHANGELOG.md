@@ -9,7 +9,13 @@
 
 ## Unreleased
 
-### **0.0.5** (Latest)
+### **0.0.6** (Latest)
+
+- `Added` Scss modules localized to a component.
+
+- `Removed` Deprecated some scss classes.
+
+### **0.0.5**
 
 - `Added` the display interface.
   - `~/src/UI/Components.ts`

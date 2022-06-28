@@ -9,7 +9,13 @@
 
 ## Unreleased
 
-### **0.0.8** (Latest)
+### **0.0.9** (Latest)
+
+- `Added` the Surface, Layout, and Link atoms.
+
+- `Removed` the List atom.
+
+### **0.0.8**
 
 - `Added` A new way to render components, with properties as first priority and children as second. `a-Component(prop)(children)`.
 

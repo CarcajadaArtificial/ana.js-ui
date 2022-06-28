@@ -1,44 +1,25 @@
 /**
- * @module Components/Atoms/Link
+ * @module Link
  */
-import { iAnaConfiguration } from '../../../Ana/Ana.interface'
-import { RenderDictionary } from '../../../types'
-import classNames from 'classnames'
+import { applyDefaultParameters, StaticChild } from 'ana.js';
+import { Link, cLink, dLink, iLink } from './Link.interface';
+import { a } from '../../ana';
+import './Link.scss';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-//   _     _       _    
+//   _     _       _
 //  | |   (_)_ __ | | __
 //  | |   | | '_ \| |/ /
-//  | |___| | | | |   < 
+//  | |___| | | | |   <
 //  |_____|_|_| |_|_|\_\
-//                      
+//
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- *
- */
-export function rLink(
-  a: RenderDictionary,
-  config: iAnaConfiguration
-): Function {
-  config
-  return (...children: [Node | string | Function]): Function => {
-    return (param: iLink = {}): HTMLElement => {
-      param = {
-        ...{ href: '#' },
-        ...param,
-      }
-      let classes = {
-        Link: classNames('a-Link').split(' '),
-      }
 
-      return a
-        .a(...classes.Link)(...children)
-        .has({ href: param.href })
-    }
-  }
-}
+export const rLink =
+  (param: iLink = {}): Function =>
+  (...children: StaticChild[]): HTMLElement => {
+    let p: Link = applyDefaultParameters<Link, iLink>(dLink, param);
+    let c = cLink(p);
 
-//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-export interface iLink {
-  href?: string
-}
+    return a.a(c.link)(...children).has({ href: param.href });
+  };

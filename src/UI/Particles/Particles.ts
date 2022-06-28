@@ -1,23 +1,16 @@
 /**
  * @module Particles
  */
-
-import {
-  ColorValues,
-  ContrastValues,
-  LayoutMargin,
-  LayoutType,
-  Spacing,
-  SpacingPrefix,
-} from '../types'
+// prettier-ignore
+import { ColorValues, ContrastValues, LayoutMargin, LayoutType, Spacing, SpacingPrefix } from '../types'
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-//   ____            _   _      _           
-//  |  _ \ __ _ _ __| |_(_) ___| | ___  ___ 
+//   ____            _   _      _
+//  |  _ \ __ _ _ __| |_(_) ___| | ___  ___
 //  | |_) / _` | '__| __| |/ __| |/ _ \/ __|
 //  |  __/ (_| | |  | |_| | (__| |  __/\__ \
 //  |_|   \__,_|_|   \__|_|\___|_|\___||___/
-//                                          
+//
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
@@ -26,7 +19,7 @@ import {
  * @param contrast The contrast value for the color, this substitues the "light color / dark color" discrepancy.
  * @param type Background or text.
  * @returns A string with the color and contrast classes.
- * 
+ *
  * @todo Abbreviate contrast values. highest -> hst
  * @todo Reference the css classes relevant to this function.
  */
@@ -44,7 +37,7 @@ export function ColorContrastClass(
       'cont-l': contrast === 'low',
       'cont-lst': contrast === 'lowest',
     },
-  ]
+  ];
 }
 
 /**
@@ -52,7 +45,7 @@ export function ColorContrastClass(
  * @param type The type of the layout.
  * @param margin The margin of the layout.
  * @returns A string that contains the css classes for the layout type and margin.
- * 
+ *
  * @todo Reference the css classes relevant to this function.
  */
 export function LayoutClass(type?: LayoutType, margin?: LayoutMargin) {
@@ -72,7 +65,7 @@ export function LayoutClass(type?: LayoutType, margin?: LayoutMargin) {
       'a-Layout-margin-single': margin === 'single',
       'a-Layout-margin-none': margin === 'none',
     },
-  ]
+  ];
 }
 
 /**
@@ -80,9 +73,9 @@ export function LayoutClass(type?: LayoutType, margin?: LayoutMargin) {
  * @param prefix A character that abbreviates the spacing attribute.
  * @param spacing The spacing magnitude.
  * @returns A string with the spacing css class.
- * 
+ *
  * @todo Reference the css classes relevant to this function.
  */
 export function SpacingClass(prefix: SpacingPrefix, spacing?: Spacing) {
-  return `${prefix}-${spacing}`
+  return `${prefix}-${spacing}`;
 }

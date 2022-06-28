@@ -11,10 +11,10 @@ import { rParagraph } from './Atoms/Paragraph/Paragraph'
 import { rSmall } from './Atoms/Small/Small'
 import { rSubheading } from './Atoms/Subheading/Subheading'
 import { rTitle } from './Atoms/Title/Title'
-// import { rLayout } from './Atoms/Layout/Layout'
-// import { rLink } from './Atoms/Link/Link'
+import { rLayout } from './Atoms/Layout/Layout'
+import { rLink } from './Atoms/Link/Link'
+import { rSurface } from './Atoms/Surface/Surface'
 // import { rList } from './Atoms/List/List'
-// import { rSurface } from './Atoms/Surface/Surface'
 // import { rCheckbox } from './Molecules/Checkbox/Checkbox'
 // import { rNavbar } from './Molecules/Navbar/Navbar'
 // import { rApp } from './Organisms/App/App'
@@ -38,6 +38,9 @@ export interface Components extends Render {
   Small: Function
   Subheading: Function
   Title: Function
+  Layout: Function
+  Link: Function
+  Surface: Function
 }
 
 export const components = {
@@ -49,4 +52,7 @@ export const components = {
   Small: rSmall,
   Subheading: rSubheading,
   Title: rTitle,
+  Layout: rLayout,
+  Link: rLink,
+  Surface: rSurface,
 }

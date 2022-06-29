@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import { AddClassDictionary } from '../../types';
 import { a } from '../../ana';
 import { Surface } from '../../Atoms/Surface/Surface.interface';
@@ -43,7 +43,9 @@ export const dNavbar: Navbar = {
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 // Component Classes
 export function cNavbar(p: Navbar): AddClassDictionary {
+  p
   return {
-    navbar: classNames('a-Navbar'),
+    navbar: 'a-Navbar',
+    actions: 'a-Navbar-actions',
   };
 }

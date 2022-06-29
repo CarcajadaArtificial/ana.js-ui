@@ -9,7 +9,13 @@
 
 ## Unreleased
 
-### **0.0.11** (Latest)
+### **0.0.12** (Latest)
+
+- `Added` the Screen atom
+
+- `Added` better documentation for VSCode intellisense.
+
+### **0.0.11**
 
 - `Added` the Navbar molecule and the Page organism
 

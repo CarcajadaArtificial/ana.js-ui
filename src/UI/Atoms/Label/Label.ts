@@ -1,18 +1,14 @@
-/**
- * @module Atoms/Label
- */
 import { applyDefaultParameters, StaticChild } from 'ana.js';
 import { Label, cLabel, dLabel, iLabel } from './Label.interface';
 import { a } from '../../ana';
 import './Label.scss';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-//   _          _          _
-//  | |    __ _| |__   ___| |
-//  | |   / _` | '_ \ / _ \ |
-//  | |__| (_| | |_) |  __/ |
-//  |_____\__,_|_.__/ \___|_|
-//
+//   _         _         _ 
+//  | |   __ _| |__  ___| |
+//  | |__/ _` | '_ \/ -_) |
+//  |____\__,_|_.__/\___|_|
+//                         
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const rLabel =

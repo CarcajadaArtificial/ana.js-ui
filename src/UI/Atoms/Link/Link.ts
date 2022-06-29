@@ -1,18 +1,14 @@
-/**
- * @module Link
- */
 import { applyDefaultParameters, StaticChild } from 'ana.js';
 import { Link, cLink, dLink, iLink } from './Link.interface';
 import { a } from '../../ana';
 import './Link.scss';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-//   _     _       _
-//  | |   (_)_ __ | | __
-//  | |   | | '_ \| |/ /
-//  | |___| | | | |   <
-//  |_____|_|_| |_|_|\_\
-//
+//   _    _      _   
+//  | |  (_)_ _ | |__
+//  | |__| | ' \| / /
+//  |____|_|_||_|_\_\
+//                   
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const rLink =

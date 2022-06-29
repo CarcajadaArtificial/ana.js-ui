@@ -1,7 +1,5 @@
 @import '../../scss/utils';
 
-/// A Link is an element that will take you to another html page or to perform a lesser command than a button would do. A Link must clearly explain where the link will take you to, and this information must be undertandable out of context. Limit the label to two words at most, and these shoulnd't be generic or vague. Open in a new window only in cases when opening a document with different format e.g. PDF.
-
 .a-Link {
   cursor: pointer;
   text-decoration: none;

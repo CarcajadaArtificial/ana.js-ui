@@ -1,18 +1,14 @@
-/**
- * @module Flex
- */
 import { applyDefaultParameters, StaticChild } from 'ana.js';
 import { Flex, cFlex, dFlex, iFlex } from './Flex.interface';
 import { a } from '../../ana';
 import './Flex.scss';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-//   _____ _           
-//  |  ___| | _____  __
-//  | |_  | |/ _ \ \/ /
-//  |  _| | |  __/>  < 
-//  |_|   |_|\___/_/\_\
-//                     
+//   ___ _         
+//  | __| |_____ __
+//  | _|| / -_) \ /
+//  |_| |_\___/_\_\
+//                 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const rFlex =

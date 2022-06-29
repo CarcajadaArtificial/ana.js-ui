@@ -20,6 +20,6 @@ export const rSurface =
   (...children: StaticChild[]): HTMLElement => {
     let p: Surface = applyDefaultParameters<Surface, iSurface>(dSurface, param);
     let c = cSurface(p);
-
-    return a.div(c.surface)(...children);
+    
+    return a[p.tag](c)(...children);
   };

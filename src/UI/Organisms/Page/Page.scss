@@ -1,6 +1,14 @@
 @import '../../scss/utils';
 
 .a-Page {
-  padding: unit-x(2) 0;
   min-height: 100vh;
+
+  &-header {
+    min-height: unit-x(6);
+  }
+
+  &-content {
+    position: relative;
+    top: unit-x(-3);
+  }
 }

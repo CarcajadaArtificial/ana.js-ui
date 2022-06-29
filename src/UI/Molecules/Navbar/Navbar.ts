@@ -1,12 +1,15 @@
 /**
- * @module Type/Navbar
+ * @module Molecules/Navbar
  */
-import { iAnaConfiguration } from '../../../Ana/Ana.interface'
-import { RenderDictionary } from '../../../types'
-import classNames from 'classnames'
-import { rParagraph } from '../../Atoms/Paragraph/Paragraph'
-import { rSurface } from '../../Atoms/Surface/Surface'
-import { rBox } from '../../Atoms/Box/Box'
+import { applyDefaultParameters } from 'ana.js';
+import { Navbar, cNavbar, dNavbar, iNavbar } from './Navbar.interface';
+import { a } from '../../ana';
+import './Navbar.scss';
+import { rBox } from '../../Atoms/Box/Box';
+import { rParagraph } from '../../Atoms/Paragraph/Paragraph';
+import { rFlex } from '../../Atoms/Flex/Flex';
+import { rLink } from '../../Atoms/Link/Link';
+import { rSurface } from '../../Atoms/Surface/Surface';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 //   _   _             _
@@ -16,48 +19,20 @@ import { rBox } from '../../Atoms/Box/Box'
 //  |_| \_|\__,_| \_/ |_.__/ \__,_|_|
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- * The Navbar is in charge of the site’s navigation. Out there, there are numerous different navbars. They have different scopes and complexities between each other. This one is a navbar stripped down to it’s bare minimums. It contains the site’s logo and name that work as a “home” button, and an “actions” space where buttons can be placed to do something. Mainly that space will be occupied by a Drawer component coming from the right side. It is not a toolbar. The navbar must not reach a point where it becomes an enabler of main functionalities. Finally,  it must be able to be minimized or entirely hidden.
- */
-export function rNavbar(
-  a: RenderDictionary,
-  config: iAnaConfiguration
-): Function {
-  a.Paragraph = rParagraph(a, config)
-  a.Surface = rSurface(a, config)
-  a.Box = rBox(a, config)
-  return (...children: [Node | string | Function]): Function => {
-    children
-    return (param: iNavbar = {}): HTMLElement => {
-      param = {
-        ...{ title: 'Title', logo: a.span()('Logo'), actions: [a.span('Action')()] },
-        ...param,
-      }
-      let classes = {
-        Navbar: classNames('a-Navbar').split(' '),
-        Container: classNames('a-Navbar_container').split(' '),
-        Logo: classNames('a-Navbar_logo').split(' '),
-        Title: classNames('a-Navbar_title').split(' '),
-        Actions: classNames('a-Navbar_actions').split(' '),
-      }
-      classes
 
-      return a.div(classes.Container)(
-        a.Surface(
-          a.Box(a.nav('a-Navbar')(param.logo, a.Paragraph(param.title)()))({
-            padding: 'tpl',
-          })
-        )()
+export const rNavbar = (param: iNavbar = {}): HTMLElement => {
+  let p: Navbar = applyDefaultParameters<Navbar, iNavbar>(dNavbar, param);
+  let c = cNavbar(p);
+
+  return rSurface({...p.surface, addClass: c.navbar})(
+    rBox({ padding: 'tpl' })(
+      rFlex({ gap: 'tpl', items: 'center' })(
+        rLink()(
+          rFlex({ gap: 'tpl', items: 'center' })(p.logo, rParagraph()(p.title))
+        ),
+
+        ...p.actions
       )
-    }
-  }
-}
-
-//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-export interface iNavbar {
-  logo?: Node
-  actions?: Node[]
-  title?: string
-  isHidden?: boolean
-  isMinimized?: boolean
-}
+    )
+  )
+};

@@ -9,7 +9,13 @@
 
 ## Unreleased
 
-### **0.0.10** (Latest)
+### **0.0.11** (Latest)
+
+- `Added` the Navbar molecule and the Page organism
+
+- `Added` a lighter tone for the color grey-white.
+
+### **0.0.10**
 
 - `Added` the Flex atom
 

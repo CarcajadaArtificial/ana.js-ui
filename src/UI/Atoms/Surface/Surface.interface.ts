@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ColorContrastClass, SpacingClass } from '../../Particles/Particles';
-import { AddClassDictionary, ColorValues, ContrastValues, Spacing } from '../../types';
+import { ColorValues, ContrastValues, ParentElements, Spacing } from '../../types';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 export interface iSurface {
@@ -8,7 +8,8 @@ export interface iSurface {
   contrast?: ContrastValues
   round?: Spacing
   elevation?: Spacing
-  addClass?: AddClassDictionary
+  addClass?: string
+  tag?: ParentElements
 }
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -17,7 +18,8 @@ export interface Surface {
   contrast: ContrastValues
   round: Spacing
   elevation: Spacing
-  addClass: AddClassDictionary
+  addClass: string
+  tag: ParentElements
 }
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -26,19 +28,18 @@ export const dSurface: Surface = {
   background: 'grey',
   round: 'sgl',
   elevation: 'sgl',
-  addClass: {},
+  addClass: '',
+  tag: 'div'
 };
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 // Component Classes
-export function cSurface(p: Surface): AddClassDictionary {
-  return {
-    surface: classNames(
-      'a-Surface',
-      ColorContrastClass(p.background, p.contrast, 'bg'),
-      SpacingClass('r', p.round),
-      SpacingClass('l', p.elevation),
-      p.addClass.surface
-    ),
-  };
+export function cSurface(p: Surface): string {
+  return classNames(
+    'a-Surface',
+    ColorContrastClass(p.background, p.contrast, 'bg'),
+    SpacingClass('r', p.round),
+    SpacingClass('l', p.elevation),
+    p.addClass
+  );
 }

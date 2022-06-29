@@ -15,6 +15,8 @@ import { rLayout } from './Atoms/Layout/Layout'
 import { rLink } from './Atoms/Link/Link'
 import { rSurface } from './Atoms/Surface/Surface'
 import { rFlex } from './Atoms/Flex/Flex'
+import { rNavbar } from './Molecules/Navbar/Navbar'
+import { rPage } from './Organisms/Page/Page'
 // import { rCheckbox } from './Molecules/Checkbox/Checkbox'
 // import { rNavbar } from './Molecules/Navbar/Navbar'
 // import { rApp } from './Organisms/App/App'
@@ -42,6 +44,19 @@ export interface Components extends Render {
   Link: Function
   Surface: Function
   Flex: Function
+  Page: Function
+
+  /**
+   * `EMPTY ELEMENT`
+   * The Navbar is in charge of the site’s navigation. Out there, there are numerous different navbars. 
+   * They have different scopes and complexities between each other. This one is a navbar stripped down 
+   * to it’s bare minimums. It contains the site’s logo and name that work as a “home” button, and an 
+   * “actions” space where buttons can be placed to do something. Mainly that space will be occupied by 
+   * a Drawer component coming from the right side. It is not a toolbar. The navbar must not reach a 
+   * point where it becomes an enabler of main functionalities. Finally, it must be able to be minimized 
+   * or entirely hidden.
+   */
+  Navbar: Function
 }
 
 export const components = {
@@ -57,4 +72,6 @@ export const components = {
   Link: rLink,
   Surface: rSurface,
   Flex: rFlex,
+  Navbar: rNavbar,
+  Page: rPage,
 }

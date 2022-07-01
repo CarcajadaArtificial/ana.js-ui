@@ -1,48 +1,31 @@
-/**
- * @module Type/App
- */
-import { iAnaConfiguration } from '../../../Ana/Ana.interface'
-import { RenderDictionary } from '../../../types'
-import classNames from 'classnames'
-import { byId } from '../../../utils'
-import { rNavbar } from '../../Molecules/Navbar/Navbar'
+import { applyDefaultParameters, StaticChild } from 'ana.js';
+import { App, cApp, dApp, iApp } from './App.interface';
+import { a } from '../../ana';
+import './App.scss';
+import { rNavbar } from '../../Molecules/Navbar/Navbar';
+import { rPage } from '../Page/Page';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-//      _
-//     / \   _ __  _ __
-//    / _ \ | '_ \| '_ \
-//   / ___ \| |_) | |_) |
-//  /_/   \_\ .__/| .__/
-//          |_|   |_|
+//     _
+//    /_\  _ __ _ __
+//   / _ \| '_ \ '_ \
+//  /_/ \_\ .__/ .__/
+//        |_|  |_|
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- *
- */
-export function rApp(a: RenderDictionary, config: iAnaConfiguration): Function {
-  a.Navbar = rNavbar(a, config)
-  // return (...children: [Node | string | Function]): Function => {
-    return (param: iApp = {}): HTMLElement | undefined => {
-      param = {
-        ...{ prependToBody: true },
-        ...param,
-      }
-      let classes = {
-        App: classNames('a-App').split(' '),
-      }
 
-      const app = a.main(...classes.App)(a.Navbar()())
+export const rApp = (param: iApp = {}): HTMLElement => {
+  let p: App = applyDefaultParameters<App, iApp>(dApp, param);
+  let c = cApp(p);
 
-      if (param.prependToBody === true) {
-        byId('app').prepend(app)
-        return undefined
-      } else {
-        return app
-      }
-    }
-  // }
-}
+  let urlParams = new URLSearchParams(window.location.search);
+  let pageName = urlParams.get('p') === null ? 'index' : urlParams.get('p')!;
+  let page;
 
-//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-export interface iApp {
-  prependToBody?: boolean
-}
+  if (Object.keys(p.pages).includes(pageName)) {
+    page = p.pages[pageName];
+  } else {
+    page = rPage()('404');
+  }
+
+  return a.div(c.app)(rNavbar(), page);
+};

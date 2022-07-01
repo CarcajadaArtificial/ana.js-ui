@@ -2,30 +2,30 @@ import classNames from 'classnames';
 import { FlexClass } from '../../Particles/Particles';
 import {
   AddClassDictionary,
-  flexContent,
-  flexDirection,
-  flexItems,
-  flexWrap,
+  FlexContent,
+  FlexDirection,
+  FlexItems,
+  FlexWrap,
   Spacing,
 } from '../../types';
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 export interface iFlex {
-  direction?: flexDirection;
-  wrap?: flexWrap;
-  justify?: flexContent;
-  items?: flexItems;
-  content?: flexContent;
+  direction?: FlexDirection;
+  wrap?: FlexWrap;
+  justify?: FlexContent;
+  items?: FlexItems;
+  content?: FlexContent;
   gap?: Spacing;
 }
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 export interface Flex {
-  direction: flexDirection;
-  wrap: flexWrap;
-  justify: flexContent;
-  items: flexItems;
-  content: flexContent;
+  direction: FlexDirection;
+  wrap: FlexWrap;
+  justify: FlexContent;
+  items: FlexItems;
+  content: FlexContent;
   gap: Spacing;
 }
 

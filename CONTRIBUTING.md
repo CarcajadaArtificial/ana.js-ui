@@ -3,9 +3,6 @@
 ## Example.ts
 
 ```Typescript
-/**
- * @module Example
- */
 import { applyDefaultParameters, StaticChild } from 'ana.js';
 import { Example, cExample, dExample, iExample } from './Example.interface';
 import { a } from '../../ana';

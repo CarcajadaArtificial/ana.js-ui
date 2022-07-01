@@ -96,22 +96,35 @@ export type Spacing = 'tpl' | 'dbl' | 'sgl' | 'non';
 /**
  * 
  */
-export type flexDirection = 'row' | 'row-reverse' | 'col' | 'col-reverse'
+export type FlexDirection = 'row' | 'row-reverse' | 'col' | 'col-reverse'
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 /**
  * 
  */
-export type flexWrap = 'wrap' | 'wrap-reverse' | 'nowrap'
+export type FlexWrap = 'wrap' | 'wrap-reverse' | 'nowrap'
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 /**
  * 
  */
-export type flexItems = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
+export type FlexItems = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
 
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 /**
  * 
  */
-export type flexContent = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
+export type FlexContent = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
+
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+/**
+ * 
+ */
+export type AppTypes = 'document' | 'textual' | 'dashboard'
+
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+/**
+ * 
+ */
+export type NodeDictionary = { [key:string]: Node }
+

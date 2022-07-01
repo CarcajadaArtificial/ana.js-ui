@@ -17,6 +17,7 @@ import { rSurface } from './Atoms/Surface/Surface'
 import { rFlex } from './Atoms/Flex/Flex'
 import { rNavbar } from './Molecules/Navbar/Navbar'
 import { rPage } from './Organisms/Page/Page'
+import { rApp } from './Organisms/App/App'
 // import { rCheckbox } from './Molecules/Checkbox/Checkbox'
 // import { rNavbar } from './Molecules/Navbar/Navbar'
 // import { rApp } from './Organisms/App/App'
@@ -218,6 +219,10 @@ export interface Components extends Render {
    * 
    */
   Page: Function
+  /**
+   * 
+   */
+  App: Function
 }
 
 export const components = {
@@ -239,4 +244,5 @@ export const components = {
   Navbar: rNavbar,
   // Organisms
   Page: rPage,
+  App: rApp,
 }

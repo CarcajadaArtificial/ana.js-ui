@@ -9,7 +9,11 @@
 
 ## Unreleased
 
-### **0.0.12** (Latest)
+### **0.0.13** (Latest)
+
+- `Added` an App component update for multiple pages and url parameters.
+
+### **0.0.12**
 
 - `Added` the Screen atom
 
@@ -58,12 +62,15 @@
 ### **0.0.4**
 
 - `Added` a rendered accessable to components.
+
   - `~/src/UI/ana.ts`
 
 - `Added` main application rendering, updated to `ana.js@0.9.1`
+
   - `~/src/main.ts`
 
 - `Added` the Box atom
+
   - `~/src/UI/Components.ts`
   - `~/src/UI/Atoms/Box/Box.interface.ts`
   - `~/src/UI/Atoms/Box/Box.scss`
@@ -76,9 +83,11 @@
 ### **0.0.3**
 
 - `Added` styles transfered from the ana.js repository.
+
   - `~/src/UI/scss/*`
 
 - `Added` types module
+
   - `~/src/UI/types.ts`
 
 - `Added` directory renaming
